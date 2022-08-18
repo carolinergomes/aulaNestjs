@@ -17,7 +17,7 @@ import { CreateCat } from './entity/create.cat';
 export class CatsController {
   constructor(private catsService: CatsService) {}
 
-  @Get()
+  @Get('find')
   findAll(): Promise<CreateCat[]> {
     return this.catsService.findAll();
   }
@@ -32,7 +32,7 @@ export class CatsController {
     return this.catsService.findOne(id);
   }
 
-  @Post()
+  @Post('create')
   async create(@Body() createCat: CreateCat) {
     // return `estou criando um cat de ${createCatDto.age}
     // anos chamado ${createCatDto.name}`;

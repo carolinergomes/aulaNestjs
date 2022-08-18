@@ -14,7 +14,7 @@ export class DogsService {
 
   create(dog: CreateDog) {
     // inserir no banco de dados usando o repository
-    // this.cats.push(cat);
+    // this.cats.push(dog);
     this.dogsRepository.create(dog);
   }
 

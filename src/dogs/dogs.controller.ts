@@ -16,7 +16,7 @@ import { CreateDog } from './entity/create.dog';
 export class DogsController {
   constructor(private dogsService: DogsService) {}
 
-  @Get()
+  @Get('find')
   findAll(): Promise<CreateDog[]> {
     return this.dogsService.findAll();
   }
@@ -31,7 +31,7 @@ export class DogsController {
     return this.dogsService.findOne(id);
   }
 
-  @Post()
+  @Post('create')
   async create(@Body() createDog: CreateDog) {
     this.dogsService.create(createDog);
   }
